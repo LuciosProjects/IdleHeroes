@@ -208,6 +208,9 @@ if __name__ == "__main__":
         if ["SSS"] in Valuables:
             N_SSS_pulls += 1
 
+    Above100total = np.sum(GalaScores >= 100)
+    Above150Total = np.sum(GalaScores >= 150)
+
     colorama.init()
     print(  Fore.LIGHTGREEN_EX + "--------------------------------- Summary ---------------------------------\n",
             f"Data obtained from simulating {N_Experiments} experiments.\n",
@@ -221,18 +224,20 @@ if __name__ == "__main__":
             f"Mean # of awakenings - {np.floor(np.mean(Awakenings))}\n",
             f"Mean Gala score - {np.floor(np.mean(GalaScores))} \n\n",
 
-            f"Probability for \"C-\"  rank awakenings - {N_Cm_pulls/N_Experiments}\n",
-            f"Probability for \"C\"   rank awakenings - {N_C_pulls/N_Experiments}\n",
-            f"Probability for \"C+\"  rank awakenings - {N_Cp_pulls/N_Experiments}\n",
-            f"Probability for \"B-\"  rank awakenings - {N_Bm_pulls/N_Experiments}\n",
-            f"Probability for \"B\"   rank awakenings - {N_B_pulls/N_Experiments}\n",
-            f"Probability for \"B+\"  rank awakenings - {N_Bp_pulls/N_Experiments}\n",
-            f"Probability for \"A-\"  rank awakenings - {N_Am_pulls/N_Experiments}\n",
-            f"Probability for \"A\"   rank awakenings - {N_A_pulls/N_Experiments}\n",
-            f"Probability for \"A+\"  rank awakenings - {N_Ap_pulls/N_Experiments}\n",
-            f"Probability for \"S\"   rank awakenings - {N_S_pulls/N_Experiments}\n",
-            f"Probability for \"SS\"  rank awakenings - {N_SS_pulls/N_Experiments}\n",
-            f"Probability for \"SSS\" rank awakenings - {N_SSS_pulls/N_Experiments}\n")
+            f"Probability to score at or higher than 100 points in gala - {Above100total/N_Experiments}\n",
+            f"Probability to score at or higher than 150 points in gala - {Above150Total/N_Experiments}\n\n",
+            f"Probability for \"C-\"  tier awakenings - {N_Cm_pulls/N_Experiments}\n",
+            f"Probability for \"C\"   tier awakenings - {N_C_pulls/N_Experiments}\n",
+            f"Probability for \"C+\"  tier awakenings - {N_Cp_pulls/N_Experiments}\n",
+            f"Probability for \"B-\"  tier awakenings - {N_Bm_pulls/N_Experiments}\n",
+            f"Probability for \"B\"   tier awakenings - {N_B_pulls/N_Experiments}\n",
+            f"Probability for \"B+\"  tier awakenings - {N_Bp_pulls/N_Experiments}\n",
+            f"Probability for \"A-\"  tier awakenings - {N_Am_pulls/N_Experiments}\n",
+            f"Probability for \"A\"   tier awakenings - {N_A_pulls/N_Experiments}\n",
+            f"Probability for \"A+\"  tier awakenings - {N_Ap_pulls/N_Experiments}\n",
+            f"Probability for \"S\"   tier awakenings - {N_S_pulls/N_Experiments}\n",
+            f"Probability for \"SS\"  tier awakenings - {N_SS_pulls/N_Experiments}\n",
+            f"Probability for \"SSS\" tier awakenings - {N_SSS_pulls/N_Experiments}\n")
 
     # Plot histograms
     plt.figure("Histograms")
