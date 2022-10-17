@@ -103,7 +103,7 @@ def GalaSession(R_init: int = 0, Starlights: int = 0, RefundTierLimit: str = "E-
 
     if(PrintResult):
         print(f"# of starlight crystals - {Starlights}")
-        print(f"Starting resources {R_init}")
+        print(f"initial starry gems balance {R_init}")
         print(f"Total Gala score: {GalaScore}")
         print(f"# of awakenings: {NAwakenings}")
         print(f"Valuable awakenings:\n {Valuables}")
